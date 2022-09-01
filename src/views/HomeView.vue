@@ -45,12 +45,7 @@ export default {
     <div class="our-story-top-content">
       <div class="our-story-header-wrapper">
         <div class="our-story-header-logo">
-          <img
-            src="../assets/images/logo-netflix.png"
-            alt=""
-            srcset=""
-            id="logo"
-          />
+          <img src="../assets/images/logo-netflix.png" alt="" srcset="" id="logo" />
         </div>
         <div class="our-story-action-buttons">
           <button id="language-btn">English</button>
@@ -90,27 +85,12 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img
-              src="../assets/images/tv.png"
-              alt=""
-              id="our-story-card-icon"
-            />
-            <div
-              class="our-story-card-animation"
-              data-uia="our-story-card-animation"
-            >
-              <video
-                class="our-story-card-video-tv"
-                data-uia="our-story-card-video"
-                autoplay=""
-                playsinline=""
-                muted=""
-                loop=""
-              >
-                <source
-                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
-                  type="video/mp4"
-                />
+            <img src="../assets/images/tv.png" alt="" id="our-story-card-icon" />
+            <div class="our-story-card-animation" data-uia="our-story-card-animation">
+              <video class="our-story-card-video-tv" data-uia="our-story-card-video" autoplay="" playsinline="" muted=""
+                loop="">
+                <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v"
+                  type="video/mp4" />
               </video>
             </div>
           </div>
@@ -125,12 +105,9 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img
-              alt=""
-              id="our-story-card-img"
+            <img alt="" id="our-story-card-img"
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
-              data-uia="our-story-card-img"
-            />
+              data-uia="our-story-card-img" />
           </div>
         </div>
         <div class="our-story-icon">
@@ -142,27 +119,12 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img
-              src="../assets/images/device-pile.png"
-              alt=""
-              id="our-story-card-icon"
-            />
-            <div
-              class="our-story-card-animation"
-              data-uia="our-story-card-animation"
-            >
-              <video
-                class="our-story-card-video-pc"
-                data-uia="our-story-card-video"
-                autoplay=""
-                playsinline=""
-                muted=""
-                loop=""
-              >
-                <source
-                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
-                  type="video/mp4"
-                />
+            <img src="../assets/images/device-pile.png" alt="" id="our-story-card-icon" />
+            <div class="our-story-card-animation" data-uia="our-story-card-animation">
+              <video class="our-story-card-video-pc" data-uia="our-story-card-video" autoplay="" playsinline="" muted=""
+                loop="">
+                <source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices.m4v"
+                  type="video/mp4" />
               </video>
             </div>
           </div>
@@ -176,11 +138,7 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img
-              src="../assets/images/kids.png"
-              alt=""
-              id="our-story-card-icon"
-            />
+            <img src="../assets/images/kids.png" alt="" id="our-story-card-icon" />
           </div>
         </div>
       </div>
@@ -301,7 +259,7 @@ export default {
   </footer>
 </template>
 
-<style scoped>
+<style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
@@ -352,7 +310,7 @@ body {
   z-index: 1;
 }
 
-.our-story-icons > div:nth-child(2n) {
+.our-story-icons>div:nth-child(2n) {
   flex-direction: row-reverse;
 }
 
@@ -363,7 +321,7 @@ body {
   border-bottom: 8px solid #222;
 }
 
-.our-story-icon > .our-story-icon-left {
+.our-story-icon>.our-story-icon-left {
   width: 650px;
   height: auto;
 }
@@ -679,12 +637,12 @@ input:focus {
     padding: 5% 0;
   }
 
-  .our-story-icon > .our-story-icon-left {
+  .our-story-icon>.our-story-icon-left {
     width: 800px;
     height: auto;
   }
 
-  .our-story-icons > div:nth-child(2n) {
+  .our-story-icons>div:nth-child(2n) {
     flex-direction: column;
   }
 
@@ -833,12 +791,12 @@ input:focus {
     padding: 5% 0;
   }
 
-  .our-story-icon > .our-story-icon-left {
+  .our-story-icon>.our-story-icon-left {
     width: 350px;
     height: auto;
   }
 
-  .our-story-icons > div:nth-child(2n) {
+  .our-story-icons>div:nth-child(2n) {
     flex-direction: column;
   }
 
