@@ -2,25 +2,18 @@
   <div class="login">
     <div class="header">
       <div class="logo">
-        <img
-          src="../assets/images/logo-netflix.png"
-          alt=""
-          srcset=""
-          id="logo"
-        />
+        <RouterLink to="/"><img src="../assets/images/logo-netflix.png" alt="" srcset="" id="logo" /></RouterLink>
       </div>
     </div>
     <div class="loginForm">
       <div class="loginBox">
         <div class="loginBoxHeading">
           <h1 id="signInText">Sign In</h1>
-          <input
-            type="text"
-            id="inputBox"
-            placeholder="Email or phone number"
-          />
-          <input type="text" id="inputBox" placeholder="Password" />
-          <button id="loginBtn">Sign In</button>
+          <input type="email" class="inputBox" v-model="state.email" placeholder="Email or phone number" />
+          <span v-if="v$.email.$error">Proper email format is required.</span>
+          <input type="password" class="inputBox" v-model="state.password" placeholder="Password" />
+          <span v-if="v$.email.$error">Use at least six characters.</span>
+          <button id="loginBtn" @click="submitLogin">Sign In</button>
         </div>
         <div class="loginBoxBelow">
           <div class="loginBoxLeft">
@@ -32,29 +25,61 @@
         <div class="loginBoxOther">
           <span id="new">New to Netflix?</span>
           <a href="#" id="signUp" style="color: white"> Sign up now.</a>
-          <span id="captcha"
-            ><br />
+          <span id="captcha"><br />
             This page is protected by Google reCAPTCHA to ensure you're not a
-            bot. Learn more.</span
-          >
+            bot. Learn more.
+          </span>
         </div>
-      </div>
-    </div>
-    <div class="footer" hidden>
-      <div class="footerTop">
-        <span><a href="">Questions? Contact us.</a></span>
-      </div>
-      <div class="footerLinks">
-        <span><a href="">FAQ</a></span>
-        <span><a href="">Help Center</a></span>
-        <span><a href="">Terms of Use</a></span>
-        <span><a href="">Privacy</a></span>
       </div>
     </div>
   </div>
 </template>
 
+<script>
+
+import useValidate from '@vuelidate/core';
+import { required, email, minLength } from '@vuelidate/validators';
+import { reactive, computed } from 'vue';
+
+export default {
+  data() {
+    return {
+
+    }
+  },
+  setup() {
+    const state = reactive({
+      email: '',
+      password: '',
+    });
+    const rules = computed(() => {
+      return {
+        email: { required, email },
+        password: { required, minLength: minLength(6) },
+      };
+    });
+    const v$ = useValidate(rules, state)
+    return {
+      state,
+      v$,
+    }
+  },
+  methods: {
+    submitLogin() {
+      this.v$.$validate()
+      if (!this.v$.$error) {
+        console.log(this.v$)
+        this.$router.push({ name: "browse" });
+      }
+    }
+  }
+}
+</script>
+
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 body {
   margin: 0;
   padding: 0;
@@ -104,37 +129,21 @@ a:visited {
 .loginBoxBelow {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .loginBoxOther {
-  margin-top: 30%;
+  margin-top: 15%;
 }
-
-/* .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 150px;
-  background: rgba(0,0,0,.75);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-} */
-
-/* 
-
-.footerLinks a{
-  margin-right: 50px;
-} */
 
 #signInText {
   color: white;
   font-weight: 500;
   font-size: 34px;
+  font-family: 'Poppins', sans-serif;
 }
 
-#inputBox {
+.inputBox {
   border: 0;
   border-radius: 4px;
   color: #fff;
@@ -143,27 +152,30 @@ a:visited {
   width: 100%;
   margin-top: 20px;
   background: #333;
+  font-family: 'Poppins', sans-serif;
 }
 
 #loginBtn {
   background: #e50914;
   border-radius: 4px;
   font-size: 16px;
-  font-weight: 700;
   margin: 24px 0 12px;
   width: 100%;
   padding: 16px;
   color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
 #rememberMe {
   margin-left: 5px;
   color: #b3b3b3;
   font-size: 14px;
+  font-family: 'Poppins', sans-serif;
 }
 
 #captcha {
   font-size: 13px;
+  font-family: 'Poppins', sans-serif;
 }
 
 @media only screen and (min-width: 350px) and (max-width: 739px) {
