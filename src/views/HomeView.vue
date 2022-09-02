@@ -85,7 +85,7 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img src="../assets/images/tv.png" alt="" id="our-story-card-icon" />
+            <img src="../assets/images/tv.png" alt="" id="tv" />
             <div class="our-story-card-animation" data-uia="our-story-card-animation">
               <video class="our-story-card-video-tv" data-uia="our-story-card-video" autoplay="" playsinline="" muted=""
                 loop="">
@@ -105,9 +105,9 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img alt="" id="our-story-card-img"
+            <img alt="" id="eleven"
               src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
-              data-uia="our-story-card-img" />
+              data-uia="" />
           </div>
         </div>
         <div class="our-story-icon">
@@ -119,7 +119,7 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img src="../assets/images/device-pile.png" alt="" id="our-story-card-icon" />
+            <img src="../assets/images/device-pile.png" alt="" id="tv" />
             <div class="our-story-card-animation" data-uia="our-story-card-animation">
               <video class="our-story-card-video-pc" data-uia="our-story-card-video" autoplay="" playsinline="" muted=""
                 loop="">
@@ -138,7 +138,7 @@ export default {
             </h3>
           </div>
           <div class="our-story-icon-right">
-            <img src="../assets/images/kids.png" alt="" id="our-story-card-icon" />
+            <img src="../assets/images/kids.png" alt="" id="tv" />
           </div>
         </div>
       </div>
@@ -266,6 +266,12 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+a:visited {
+  color: white;
+  text-decoration: none;
 }
 
 /* Header section */
@@ -319,6 +325,7 @@ body {
   align-items: center;
   justify-content: center;
   border-bottom: 8px solid #222;
+  padding: 40px;
 }
 
 .our-story-icon>.our-story-icon-left {
@@ -405,7 +412,7 @@ footer {
   display: flex;
   align-items: center;
   position: relative;
-  left: 85px;
+  left: 72px;
 }
 
 .footer .bottom {
@@ -526,7 +533,7 @@ input:focus {
   font-family: "Poppins", sans-serif;
 }
 
-#our-story-card-img {
+#eleven {
   width: 505px;
   height: 379px;
 }
@@ -535,7 +542,7 @@ input:focus {
   color: white;
   font-size: 3.125rem;
   line-height: 1.1;
-  margin-bottom: 0.5rem;
+  margin: 1rem 0 1rem 0;
   font-weight: bold;
   font-family: "Poppins", sans-serif;
 }
@@ -546,7 +553,57 @@ input:focus {
   font-family: "Poppins", sans-serif;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1053px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  #tv {
+    width: 450px;
+    height: auto;
+  }
+
+  /* TV video */
+  .our-story-card-video-tv {
+    position: relative;
+    top: -465px;
+    left: 10px;
+    width: 400px;
+    z-index: -1;
+  }
+
+  #eleven {
+    width: 450px;
+    height: auto;
+  }
+
+  /* iMac video */
+  .our-story-card-video-pc {
+    position: relative;
+    top: -550px;
+    left: 80px;
+    width: 280px;
+    z-index: -1;
+  }
+  #our-story-title, #our-story-title-second {
+    font-size: 40px;
+  }
+
+  #our-story-subtitle {
+    font-size: 24px;
+  }
+
+  #our-story-icon-heading {
+    font-size: 40px;
+  }
+  #our-story-icon-subheading {
+    font-size: 20px;
+  }
+}
+
 @media only screen and (min-width: 550px) and (max-width: 949px) {
+
   /* Header */
 
   #logo {
@@ -681,6 +738,7 @@ input:focus {
 }
 
 @media only screen and (min-width: 350px) and (max-width: 767px) {
+
   .our-story-top-content {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url("@/assets/images/background.jpg");
@@ -811,13 +869,13 @@ input:focus {
   }
 
   /* TV */
-  #our-story-card-icon {
+  #tv {
     width: 350px;
     height: auto;
   }
 
   /* Eleven */
-  #our-story-card-img {
+  #eleven {
     width: 351px;
     height: 263px;
   }
