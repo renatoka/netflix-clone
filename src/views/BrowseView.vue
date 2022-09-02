@@ -11,23 +11,23 @@
       </div>
       <div class="browse-users">
         <div class="user">
-          <img src="../assets/images/userOne.png" alt="" id="user-profile-picture" />
+          <RouterLink to="/movies"><img src="../assets/images/userOne.png" alt="" id="user-profile-picture" /></RouterLink>
           <p id="browse-user">John</p>
         </div>
         <div class="user">
-          <img src="../assets/images/userTwo.png" alt="" id="user-profile-picture" />
+          <RouterLink to="/movies"><img src="../assets/images/userTwo.png" alt="" id="user-profile-picture" /></RouterLink>
           <p id="browse-user">Sarah</p>
         </div>
         <div class="user">
-          <img src="../assets/images/userThree.png" alt="" id="user-profile-picture" />
+          <RouterLink to="/movies"><img src="../assets/images/userThree.png" alt="" id="user-profile-picture" /></RouterLink>
           <p id="browse-user">Me</p>
         </div>
         <div class="user">
-          <img src="../assets/images/userFour.png" alt="" id="user-profile-picture" />
+          <RouterLink to="/movies"><img src="../assets/images/userFour.png" alt="" id="user-profile-picture" /></RouterLink>
           <p id="browse-user">Liz</p>
         </div>
         <div class="user">
-          <img src="../assets/images/userFive.png" alt="" id="user-profile-picture" />
+          <RouterLink to="/movies"><img src="../assets/images/userFive.png" alt="" id="user-profile-picture" /></RouterLink>
           <p id="browse-user">Jake</p>
         </div>
       </div>
@@ -123,7 +123,6 @@ body {
   display: block;
   font-size: 1.2vw;
   letter-spacing: 2px;
-  margin: 2em 0 1em;
   padding: 0.5em 1.5em;
 }
 
