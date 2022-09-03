@@ -36,12 +36,11 @@
         </div>
         <div class="mainView">
             <div class="billboard">
-                <img src="../assets/images/blacksummerbackground.webp" alt="" srcset="" class="background">
+                <img :src="selectedImage" alt="" srcset="" class="background">
                 <div class="info-wrapper">
-                    <img src="../assets/images/blacksummer.webp" alt="" srcset="" class="n-series-img">
+                    <img :src="this.coverImg" alt="" srcset="" class="n-series-img">
                     <div class="info-wrapper-text">
-                        In the dark, early days of a zombie apocalypse, complete strangers band together to find the
-                        strength they need to survive and get back to loved ones.
+                        {{ this.text }}
                     </div>
                     <div class="info-wrapper-buttons">
                         <button class="play-button">
@@ -65,11 +64,127 @@
                     </div>
                 </div>
             </div>
+            <div class="slider-content">
+                <div class="slider-container">
+                    <div class="slider-item">
+                        <h1 class="slider-heading">US TV Dramas</h1>
+                        <div class="slider-images">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <h1 class="slider-heading">US TV Dramas</h1>
+                        <div class="slider-images">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <h1 class="slider-heading">US TV Dramas</h1>
+                        <div class="slider-images">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <h1 class="slider-heading">US TV Dramas</h1>
+                        <div class="slider-images">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <h1 class="slider-heading">US TV Dramas</h1>
+                        <div class="slider-images">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <h1 class="slider-heading">US TV Dramas</h1>
+                        <div class="slider-images">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <h1 class="slider-heading">US TV Dramas</h1>
+                        <div class="slider-images">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                            <img src="../assets/images/bb.webp" alt="" srcset="" class="slider-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+export default {
+    data() {
+        return {
+            images: ['https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABccducOFW4mcVGDxH5SLzLekOwmgaHfaqvekXucEoU6r6AH4Kj0XtbVgxqQcmqiHvqkhWPiHPP44P4N2WOOVmQhjWGvUFdQcl8aI.webp?r=853',
+                'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWqwcrQXuSBtatzlLN4xULiNdr6WswK6T0t8rvH0s8nJNqCjN9EZIOmsJv0pqhJa6XxxRHnvQAaJuvw5vvqFP11DcvRpH8ZXoJXm.webp?r=afe',
+                'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWljal2-yUqjEfv4AxhQ4O6t6S3kejd8zsIbJ1CCWnCqfARB8WFi2B5LWBwYLRpOwY7NCUc38PnVlkkhFTG4ZuhwViVW77Fp6Zca.webp?r=e0c'],
+            selectedImage: null,
+            text: null,
+            coverImg: null,
+        }
+    },
+    methods: {
+        randomItem(items) {
+            return items[Math.floor(Math.random() * items.length)];
+        }
+    },
+    created() {
+        /* Very beginner friendly way of displaying billboard images.
+        Will update once I learn more and how to do so. */
+        this.selectedImage = this.randomItem(this.images);
+        console.log(this.selectedImage)
+        if (this.selectedImage == 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABccducOFW4mcVGDxH5SLzLekOwmgaHfaqvekXucEoU6r6AH4Kj0XtbVgxqQcmqiHvqkhWPiHPP44P4N2WOOVmQhjWGvUFdQcl8aI.webp?r=853') {
+            this.text = 'In a 1950s orphanage, a young girl reveals an astonishing talent for chess and begins an unlikely journey to stardom while grappling with addiction.',
+            this.coverImg = 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABV5GmYeqjqlr49rSPZyok2MlnG7k-L1BLumk9b9tqWGZLp3qAIcve97viX_SRHMWGHXrAemVtpHq8JDXTfNtkf-wGrk-5teNvyMeKMoQgLUBv9U6kQou3IOgQaRgIdnr1YyXgIRpOwwNqfNCGoj7nBdcJtuJ6RbyDMcffvdt9pAgSD_Q9KAk1Q.webp?r=373'
+        }
+        else if (this.selectedImage == 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWqwcrQXuSBtatzlLN4xULiNdr6WswK6T0t8rvH0s8nJNqCjN9EZIOmsJv0pqhJa6XxxRHnvQAaJuvw5vvqFP11DcvRpH8ZXoJXm.webp?r=afe') {
+            this.text = 'Decades after the tournament that changed their lives, the rivalry between Johnny and Daniel reignites in this sequel to the "Karate Kid" films.'
+            this.coverImg = 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/0jxQXg4biAHes0_WdLiCw28fDpg/AAAABWO8u8n-u2Bg1KRfTMEUzyk19J6mvat3_xyQxGqr16jhg7LVDr_I5V2kjRkLOBlX6lci7y_8-dLsJEyO2DzpMyeQ49GmJVI0dvbHsZJVyuLKh2qIKgP4VacSMTFL8slBitT2u5Xj5cWrUAcJshP2pivx3mXdVEZvODtfNMTPg4Cpk7Hk-vNKPOuGUn1MWMSN0nq16jwkZPheTrziKlbudPPRwAxn97gZnD00Nl80yazG_KG-BE2OWjdxwI673Kf-uxZx-0P8g3o4UPmYJwWJsOW2s8zn3pmW5WEj4wI3_qBFb6WZOKB0p4CMTfx9nqtw_2fowF0582SfZCKiBBWb7fm9Yk2nabuheFWJpKzRdaGuZ-RpYoLba0w-QzqpMYBexhm_3Gq_-iwNVJ7z-sZc6-fA_kxFidJYItMJfR8.webp?r=63f'
+        } 
+        else if (this.selectedImage == 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABWljal2-yUqjEfv4AxhQ4O6t6S3kejd8zsIbJ1CCWnCqfARB8WFi2B5LWBwYLRpOwY7NCUc38PnVlkkhFTG4ZuhwViVW77Fp6Zca.webp?r=e0c') {
+            this.text = 'A forensics expert who wakes from a coma with amazing new powers squares off against forces threatening the city in this live-action superhero romp.'
+            this.coverImg = 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABbU1ZOR7A3G4OHkAwbYzfYR9BWB4n9lcQjWeqZSv6YwXyZ6okVmkVVGilIhuUSGov_ZcnG2Rt4BDoZCJE3voe0Kvh49Pt7g-8o6r2tUWvPi9.webp?r=604'
+        }
+    }
+}
 
 </script>
 
@@ -98,7 +213,7 @@
 
 .mainHeader-li a {
     font-weight: 400;
-    font-size: 0.6vw;
+    font-size: 0.8vw;
     font-family: "Poppins", sans-serif;
 }
 
@@ -133,7 +248,7 @@
     position: absolute;
     top: 35%;
     left: 60px;
-    width: 36%;
+    width: 30vw;
     z-index: 10;
 }
 
@@ -185,4 +300,35 @@
     gap: 10px;
 }
 
+.slider-content {
+    padding: 20px 60px;
+    position: relative;
+    top: -150px;
+}
+
+.slider-item {
+    overflow-x: hidden;
+    margin: 2vw 0;
+}
+
+.slider-images {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1vw;
+}
+
+.slider-image {
+    width: 20vw;
+}
+
+.slider-images .slider-image {
+    width: 1fr;
+}
+
+.slider-heading {
+    font-size: 2vw;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
 </style>
