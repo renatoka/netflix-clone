@@ -10,9 +10,9 @@
         <div class="loginBoxHeading">
           <h1 id="signInText">Sign In</h1>
           <input type="email" class="inputBox" v-model="state.email" placeholder="Email or phone number" />
-          <span v-if="v$.email.$error">Proper email format is required.</span>
+          <span id="warning" v-if="v$.email.$error">Proper email format is required.</span>
           <input type="password" class="inputBox" v-model="state.password" placeholder="Password" />
-          <span v-if="v$.email.$error">Use at least six characters.</span>
+          <span id="warning" v-if="v$.email.$error">Use at least six characters.</span>
           <button id="loginBtn" @click="submitLogin">Sign In</button>
         </div>
         <div class="loginBoxBelow">
@@ -176,6 +176,10 @@ a:visited {
 #captcha {
   font-size: 13px;
   font-family: 'Poppins', sans-serif;
+}
+
+#warning {
+  color: orange;
 }
 
 @media only screen and (min-width: 350px) and (max-width: 739px) {
