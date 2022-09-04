@@ -274,6 +274,10 @@ a:visited {
   text-decoration: none;
 }
 
+a {
+  color: white;
+}
+
 /* Header section */
 
 .our-story-top-content {
