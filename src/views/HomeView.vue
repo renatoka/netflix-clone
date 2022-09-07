@@ -15,6 +15,7 @@ export default {
         five: false,
         six: false,
       },
+      cookiesVisible: true,
     };
   },
   methods: {
@@ -37,12 +38,35 @@ export default {
     showFaqInfoSix() {
       this.faqVisible.six = !this.faqVisible.six;
     },
+    showCookies() {
+      this.cookiesVisible = !this.cookiesVisible;
+    },
   },
 };
 </script>
 <template>
   <header>
     <div class="our-story-top-content">
+      <div class="cookies-notification" v-if="cookiesVisible">
+        <span class="cookies-text">
+          Netflix and third parties use cookies and similar technologies on this website to collect information about
+          your browsing activities which we use to analyse your use of the website, to personalise our services and to
+          customise our online advertisements. When your consent is required, you can accept, refuse or personalise your
+          choices. You can also change your preferences at any time by clicking on “Cookie Preferences” in the footer of
+          each page. Netflix supports the Digital Advertising Alliance Principles. Learn more about our use of cookies
+          and information.
+          <div class="cookies-buttons">
+            <button class="cookies-button" @click="showCookies">Accept</button>
+            <button class="cookies-button" @click="showCookies">Reject</button>
+            <button class="cookies-button" @click="showCookies">Personalize</button>
+            <div class="close-btn">
+              <button class="close-btn-txt" @click="showCookies">
+                X
+              </button>
+            </div>
+          </div>
+        </span>
+      </div>
       <div class="our-story-header-wrapper">
         <div class="our-story-header-logo">
           <img src="../assets/images/logo-netflix.png" alt="" srcset="" id="logo" />
@@ -280,6 +304,52 @@ a {
 
 /* Header section */
 
+.cookies-notification {
+  width: 100%;
+  background-color: hsla(0,0%,100%,.95);
+  padding: 10px;
+}
+
+.cookies-text {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px
+}
+
+.cookies-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.cookies-button {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.cookies-button:nth-child(3) {
+  background: transparent;
+  border: 1px solid #8c8c8c;
+  color: #333;
+}
+
+.close-btn {
+  margin-left: auto;
+}
+
+.close-btn-txt {
+  background-color: transparent;
+  border: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .our-story-top-content {
   width: 100%;
   height: 100%;
@@ -293,7 +363,7 @@ a {
   display: flex;
   padding-top: 20px;
   margin: 0 56px 0 56px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -487,8 +557,9 @@ a:visited {
 }
 
 #email-form-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   max-width: none;
+  text-align: center;
   padding-bottom: 20px;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -590,7 +661,9 @@ input:focus {
     width: 280px;
     z-index: -1;
   }
-  #our-story-title, #our-story-title-second {
+
+  #our-story-title,
+  #our-story-title-second {
     font-size: 40px;
   }
 
@@ -601,6 +674,7 @@ input:focus {
   #our-story-icon-heading {
     font-size: 40px;
   }
+
   #our-story-icon-subheading {
     font-size: 20px;
   }
