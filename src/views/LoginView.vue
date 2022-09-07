@@ -2,7 +2,7 @@
   <div class="login">
     <div class="header">
       <div class="logo">
-        <RouterLink to="/"><img src="../assets/images/logo-netflix.png" alt="" srcset="" id="logo" /></RouterLink>
+        <RouterLink to="/"><img src="../assets/images/logo-netflix.png" alt="Netflix Logo" id="logo" /></RouterLink>
       </div>
     </div>
     <div class="loginForm">
@@ -10,9 +10,9 @@
         <div class="loginBoxHeading">
           <h1 id="signInText">Sign In</h1>
           <input type="email" class="inputBox" v-model="email" placeholder="Email or phone number" />
-          <span id="warning" v-if="errMsg">{{errMsg}}</span>
+          <span id="warning" style="color: orange;" v-if="errMsg">{{errMsg}}</span>
           <input type="password" class="inputBox" v-model="password" placeholder="Password" />
-          <span id="warning" v-if="errMsg">{{errMsg}}</span>
+          <span id="warning" style="color: orange;" v-if="errMsg">{{errMsg}}</span>
           <button id="loginBtn" @click="signIn">Sign In</button>
         </div>
         <div class="loginBoxBelow">
@@ -54,42 +54,25 @@ const signIn = () => {
       console.log(error)
       switch (error.code) {
         case 'auth/invalid-email':
-        errMsg.value = 'Invalid email. Please try again.'
+          errMsg.value = 'Invalid email. Please try again.'
           brethis.errorMsgak;
         case 'auth/email-already-in-use':
-        errMsg.value = 'The email address is already in use by another account.'
+          errMsg.value = 'The email address is already in use by another account.'
           break;
         case 'auth/user-not-found':
-        errMsg.value = 'No account with that email was found.'
+          errMsg.value = 'No account with that email was found.'
           break;
         case 'auth/missing-email':
-        errMsg.value = 'Please enter your email.'
+          errMsg.value = 'Please enter your email.'
           break;
         default:
-        errMsg.value = 'Something went wrong.'
+          errMsg.value = 'Something went wrong.'
       }
     })
 }
-
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  color: #b3b3b3;
-}
-
 .login {
   position: relative;
   min-height: 100vh;
@@ -118,7 +101,7 @@ a:visited {
 .loginBox {
   width: 450px;
   height: 660px;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 60px 68px 40px;
   border-radius: 4px;
 }
@@ -137,7 +120,6 @@ a:visited {
   color: white;
   font-weight: 500;
   font-size: 34px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .inputBox {
@@ -149,7 +131,6 @@ a:visited {
   width: 100%;
   margin-top: 20px;
   background: #333;
-  font-family: 'Poppins', sans-serif;
 }
 
 #loginBtn {
@@ -160,23 +141,17 @@ a:visited {
   width: 100%;
   padding: 16px;
   color: white;
-  font-family: 'Poppins', sans-serif;
+  border: 0;
 }
 
 #rememberMe {
   margin-left: 5px;
   color: #b3b3b3;
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
 }
 
 #captcha {
   font-size: 13px;
-  font-family: 'Poppins', sans-serif;
-}
-
-#warning {
-  color: orange;
 }
 
 @media only screen and (min-width: 350px) and (max-width: 739px) {
@@ -194,14 +169,6 @@ a:visited {
     width: 100%;
     height: 100%;
     padding: 20px;
-  }
-
-  #loginBtn {
-    border: 0;
-  }
-
-  .loginBoxOther {
-    margin-top: 1rem;
   }
 
   .loginBoxBelow {

@@ -2,7 +2,7 @@
   <div class="browse">
     <div class="header">
       <div class="logo">
-        <RouterLink to="/"><img src="../assets/images/logo-netflix.png" alt="" srcset="" id="logo" /></RouterLink>
+        <RouterLink to="/"><img src="../assets/images/logo-netflix.png" alt="Netflix Logo" id="logo" /></RouterLink>
       </div>
     </div>
     <div class="browse-main">
@@ -11,23 +11,28 @@
       </div>
       <div class="browse-users">
         <div class="user">
-          <RouterLink to="/movies"><img src="../assets/images/userOne.png" alt="" id="user-profile-picture" /></RouterLink>
+          <RouterLink to="/movies"><img src="../assets/images/userOne.png" alt="" id="user-profile-picture" />
+          </RouterLink>
           <p id="browse-user">John</p>
         </div>
         <div class="user">
-          <RouterLink to="/movies"><img src="../assets/images/userTwo.png" alt="" id="user-profile-picture" /></RouterLink>
+          <RouterLink to="/movies"><img src="../assets/images/userTwo.png" alt="" id="user-profile-picture" />
+          </RouterLink>
           <p id="browse-user">Sarah</p>
         </div>
         <div class="user">
-          <RouterLink to="/movies"><img src="../assets/images/userThree.png" alt="" id="user-profile-picture" /></RouterLink>
+          <RouterLink to="/movies"><img src="../assets/images/userThree.png" alt="" id="user-profile-picture" />
+          </RouterLink>
           <p id="browse-user">Me</p>
         </div>
         <div class="user">
-          <RouterLink to="/movies"><img src="../assets/images/userFour.png" alt="" id="user-profile-picture" /></RouterLink>
+          <RouterLink to="/movies"><img src="../assets/images/userFour.png" alt="" id="user-profile-picture" />
+          </RouterLink>
           <p id="browse-user">Liz</p>
         </div>
         <div class="user">
-          <RouterLink to="/movies"><img src="../assets/images/userFive.png" alt="" id="user-profile-picture" /></RouterLink>
+          <RouterLink to="/movies"><img src="../assets/images/userFive.png" alt="" id="user-profile-picture" />
+          </RouterLink>
           <p id="browse-user">Jake</p>
         </div>
       </div>
@@ -38,15 +43,7 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
-<style scoped>
-body {
-  width: 100%;
-  height: 100%;
-}
+<style>
 
 .browse-main {
   display: flex;
@@ -64,7 +61,6 @@ body {
 
 .browse-users {
   display: flex;
-  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -73,11 +69,6 @@ body {
 }
 
 /* Design */
-
-#header-img {
-  height: 2rem;
-  width: auto;
-}
 
 #browse-title {
   color: #fff;
@@ -106,14 +97,10 @@ body {
 
 #browse-user {
   color: grey;
-  display: block;
   font-size: 1.3vw;
-  line-height: 1.2em;
   margin: 0.6em 0;
   min-height: 1.8em;
-  overflow: hidden;
   text-align: center;
-  text-overflow: ellipsis;
 }
 
 #manage-profile {
@@ -132,10 +119,6 @@ body {
 }
 
 @media only screen and (min-width: 350px) and (max-width: 767px) {
-  #header-img {
-    height: 1rem;
-    width: auto;
-  }
 
   #browse-title {
     color: #fff;

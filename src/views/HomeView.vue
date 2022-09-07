@@ -2,37 +2,38 @@
 import { RouterLink, RouterView } from "vue-router";
 import { ref } from "vue";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 const email = ref("");
-const password = 'password'; /* Default password when registring user. */
+const password = "password"; /* Default password when registering user. */
 const router = useRouter();
 
+/* Function that register a new user */
 const register = () => {
   createUserWithEmailAndPassword(getAuth(), email.value, password)
     .then((data) => {
       console.log("Succesfully registered");
-      router.push('/login')
+      router.push("/login");
     })
     .catch((error) => {
-      console.log(error)
-      switch(error.code) {
-        case 'auth/invalid-email':
-          alert('Invalid email. Please try again.')
+      console.log(error);
+      switch (error.code) {
+        case "auth/invalid-email":
+          alert("Invalid email. Please try again.");
           break;
-        case 'auth/email-already-in-use':
-          alert('The email address is already in use by another account.')
+        case "auth/email-already-in-use":
+          alert("The email address is already in use by another account.");
           break;
-        case 'auth/user-not-found':
-          alert('No account with that email was found.')
+        case "auth/user-not-found":
+          alert("No account with that email was found.");
           break;
-        case 'auth/missing-email':
-          alert('Please enter your email.')
+        case "auth/missing-email":
+          alert("Please enter your email.");
           break;
         default:
-          alert('Something went wrong.')
+          alert("Something went wrong.");
       }
-    })
-}
+    });
+};
 </script>
 
 <script>
@@ -75,7 +76,6 @@ export default {
       this.cookiesVisible = !this.cookiesVisible;
     },
   },
-  
 };
 </script>
 <template>
@@ -83,20 +83,23 @@ export default {
     <div class="our-story-top-content">
       <div class="cookies-notification" v-if="cookiesVisible">
         <span class="cookies-text">
-          Netflix and third parties use cookies and similar technologies on this website to collect information about
-          your browsing activities which we use to analyse your use of the website, to personalise our services and to
-          customise our online advertisements. When your consent is required, you can accept, refuse or personalise your
-          choices. You can also change your preferences at any time by clicking on “Cookie Preferences” in the footer of
-          each page. Netflix supports the Digital Advertising Alliance Principles. Learn more about our use of cookies
+          Netflix and third parties use cookies and similar technologies on this
+          website to collect information about your browsing activities which we
+          use to analyse your use of the website, to personalise our services
+          and to customise our online advertisements. When your consent is
+          required, you can accept, refuse or personalise your choices. You can
+          also change your preferences at any time by clicking on “Cookie
+          Preferences” in the footer of each page. Netflix supports the Digital
+          Advertising Alliance Principles. Learn more about our use of cookies
           and information.
           <div class="cookies-buttons">
             <button class="cookies-button" @click="showCookies">Accept</button>
             <button class="cookies-button" @click="showCookies">Reject</button>
-            <button class="cookies-button" @click="showCookies">Personalize</button>
+            <button class="cookies-button" @click="showCookies">
+              Personalize
+            </button>
             <div class="close-btn">
-              <button class="close-btn-txt" @click="showCookies">
-                X
-              </button>
+              <button class="close-btn-txt" @click="showCookies">X</button>
             </div>
           </div>
         </span>
@@ -123,10 +126,8 @@ export default {
           </h4>
         </div>
         <div class="our-story-registration-field">
-          <input type="text" placeholder="Email address" id="emailField" v-model="email"/>
-          <button id="getStarted" @click="register">
-            Get Started
-          </button>
+          <input type="text" placeholder="Email address" id="emailField" v-model="email" />
+          <button id="getStarted" @click="register">Get Started</button>
         </div>
       </div>
     </div>
@@ -273,10 +274,8 @@ export default {
               Ready to watch? Enter your email to create or restart your
               membership.
             </h4>
-            <input type="text" placeholder="Email address" id="emailField" v-model="email"/>
-            <button id="getStarted">
-              Get Started
-            </button>
+            <input type="text" placeholder="Email address" id="emailField" v-model="email" />
+            <button id="getStarted">Get Started</button>
           </div>
         </div>
       </div>
@@ -318,8 +317,11 @@ export default {
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
 
 body {
   margin: 0;
@@ -334,20 +336,20 @@ a:visited {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 /* Header section */
 
 .cookies-notification {
+  background-color: #fffffff2;
   width: 100%;
-  background-color: hsla(0,0%,100%,.95);
   padding: 10px;
 }
 
 .cookies-text {
   color: black;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px
+  font-size: 14px;
 }
 
 .cookies-buttons {
@@ -362,7 +364,6 @@ a {
   color: white;
   border: none;
   padding: 5px;
-  font-family: 'Poppins', sans-serif;
   font-size: 12px;
   cursor: pointer;
 }
@@ -514,6 +515,7 @@ footer {
   margin: 0 auto;
   max-width: 1000px;
   padding: 20px 45px;
+  background-color: black;
 }
 
 .footer .top {
@@ -530,12 +532,9 @@ footer {
 
 /* Fonts */
 
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  color: white;
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
 #logo {
@@ -550,7 +549,7 @@ a:visited {
   font-size: 0.875rem;
   width: 90px;
   height: 35px;
-  font-family: "Poppins", sans-serif;
+
 }
 
 #signIn-btn {
@@ -561,7 +560,6 @@ a:visited {
   border-radius: 3px;
   border-color: transparent;
   font-size: 1rem;
-  font-family: "Poppins", sans-serif;
 }
 
 #our-story-title,
@@ -571,13 +569,11 @@ a:visited {
   position: relative;
   text-align: center;
   color: white;
-  font-family: "Poppins", sans-serif;
 }
 
 #our-story-title-second {
   position: relative;
   top: -30px;
-  font-family: "Poppins", sans-serif;
 }
 
 #our-story-subtitle {
@@ -587,7 +583,6 @@ a:visited {
   font-weight: 400;
   text-align: center;
   color: white;
-  font-family: "Poppins", sans-serif;
 }
 
 #email-form-title {
@@ -596,7 +591,6 @@ a:visited {
   text-align: center;
   padding-bottom: 20px;
   color: white;
-  font-family: "Poppins", sans-serif;
 }
 
 #emailField {
@@ -605,12 +599,6 @@ a:visited {
   height: 75px;
   position: relative;
   top: -4px;
-  font-family: "Poppins", sans-serif;
-}
-
-textarea:focus,
-input:focus {
-  outline: none;
 }
 
 #getStarted {
@@ -623,7 +611,6 @@ input:focus {
   padding-left: 15px;
   padding-right: 15px;
   font-size: 1.575rem;
-  font-family: "Poppins", sans-serif;
 }
 
 #our-story-icon-heading {
@@ -632,14 +619,12 @@ input:focus {
   line-height: 1.1;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
 }
 
 #our-story-icon-subheading {
   color: white;
   font-size: 1.625rem;
   font-weight: 400;
-  font-family: "Poppins", sans-serif;
 }
 
 #eleven {
@@ -653,20 +638,14 @@ input:focus {
   line-height: 1.1;
   margin: 1rem 0 1rem 0;
   font-weight: bold;
-  font-family: "Poppins", sans-serif;
 }
 
 #footer-text {
   color: #737373;
   margin-top: 10px;
-  font-family: "Poppins", sans-serif;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1053px) {
-
-  body {
-    overflow-x: hidden;
-  }
 
   #tv {
     width: 450px;
@@ -699,6 +678,7 @@ input:focus {
   #our-story-title,
   #our-story-title-second {
     font-size: 40px;
+    font-weight: bold;
   }
 
   #our-story-subtitle {
@@ -715,7 +695,6 @@ input:focus {
 }
 
 @media only screen and (min-width: 550px) and (max-width: 949px) {
-
   /* Header */
 
   #logo {
@@ -727,34 +706,21 @@ input:focus {
     font-size: 0.8rem;
     width: 84px;
     height: 34px;
-    font-family: "Poppins", sans-serif;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: white;
   }
 
   #our-story-title,
   #our-story-title-second {
     font-size: 3.125rem;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
   }
 
   #our-story-title-second {
     position: relative;
     top: -15px;
-    font-family: "Poppins", sans-serif;
   }
 
   #our-story-subtitle {
     font-size: 23px;
     margin: 1rem 0 0 0;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
   }
 
@@ -763,7 +729,6 @@ input:focus {
     margin: 0 auto;
     padding: 0 5%;
     text-align: center;
-    font-family: "Poppins", sans-serif;
     font-size: 23px;
   }
 
@@ -778,7 +743,6 @@ input:focus {
     height: 48px;
     position: relative;
     top: 10px;
-    font-family: "Poppins", sans-serif;
   }
 
   #getStarted {
@@ -790,7 +754,6 @@ input:focus {
     border: 0;
     position: relative;
     top: 25px;
-    font-family: "Poppins", sans-serif;
   }
 
   /* Main */
@@ -817,12 +780,10 @@ input:focus {
 
   #our-story-icon-heading {
     font-size: 2.5rem;
-    font-family: "Poppins", sans-serif;
   }
 
   #our-story-icon-subheading {
     font-size: 1.25rem;
-    font-family: "Poppins", sans-serif;
   }
 
   .our-story-faq {
@@ -846,18 +807,10 @@ input:focus {
 
   #email-form-title {
     font-size: 23px;
-    font-family: "Poppins", sans-serif;
   }
 }
 
 @media only screen and (min-width: 350px) and (max-width: 767px) {
-
-  .our-story-top-content {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url("@/assets/images/background.jpg");
-    border-bottom: 8px solid #222;
-  }
-
   /* Header */
 
   #logo {
@@ -869,21 +822,12 @@ input:focus {
     font-size: 0.8rem;
     width: 61px;
     height: 27px;
-    font-family: "Poppins", sans-serif;
-  }
 
-  a {
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: white;
   }
 
   #language-btn {
-    width: 100px;
-    height: 28px;
-    font-family: "Poppins", sans-serif;
+    width: 80px;
+    height: auto;
   }
 
   .our-story-header-wrapper {
@@ -903,20 +847,17 @@ input:focus {
   #our-story-title,
   #our-story-title-second {
     font-size: 1.75rem;
-    font-family: "Poppins", sans-serif;
     font-weight: 500;
   }
 
   #our-story-title-second {
     position: relative;
     top: -15px;
-    font-family: "Poppins", sans-serif;
   }
 
   #our-story-subtitle {
     font-size: 1.125rem;
     margin: 1rem 0 0 0;
-    font-family: "Poppins", sans-serif;
     font-weight: 400;
   }
 
@@ -925,7 +866,6 @@ input:focus {
     margin: 0 auto;
     padding: 0 5%;
     text-align: center;
-    font-family: "Poppins", sans-serif;
     font-size: 16px;
   }
 
@@ -934,7 +874,6 @@ input:focus {
     height: 48px;
     position: relative;
     top: 10px;
-    font-family: "Poppins", sans-serif;
   }
 
   #getStarted {
@@ -946,7 +885,6 @@ input:focus {
     border: 0;
     position: relative;
     top: 30px;
-    font-family: "Poppins", sans-serif;
   }
 
   /* Main */
@@ -973,12 +911,10 @@ input:focus {
 
   #our-story-icon-heading {
     font-size: 1.625rem;
-    font-family: "Poppins", sans-serif;
   }
 
   #our-story-icon-subheading {
     font-size: 1.125rem;
-    font-family: "Poppins", sans-serif;
   }
 
   /* TV */
@@ -1018,6 +954,7 @@ input:focus {
   .faq,
   .faq-answer {
     width: inherit;
+    font-size: 16px;
   }
 
   /* Footer */
@@ -1025,7 +962,6 @@ input:focus {
   #our-story-faq-title {
     font-size: 1.625rem;
     text-align: center;
-    font-family: "Poppins", sans-serif;
   }
 
   .footer .top {
@@ -1036,8 +972,7 @@ input:focus {
   }
 
   #footer-text {
-    font-size: 13px;
-    font-family: "Poppins", sans-serif;
+    font-size: 12px;
   }
 }
 </style>
