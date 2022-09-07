@@ -1,5 +1,38 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import { ref } from "vue";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { useRouter } from 'vue-router';
+const email = ref("");
+const password = 'password'; /* Default password when registring user. */
+const router = useRouter();
+
+const register = () => {
+  createUserWithEmailAndPassword(getAuth(), email.value, password)
+    .then((data) => {
+      console.log("Succesfully registered");
+      router.push('/login')
+    })
+    .catch((error) => {
+      console.log(error)
+      switch(error.code) {
+        case 'auth/invalid-email':
+          alert('Invalid email. Please try again.')
+          break;
+        case 'auth/email-already-in-use':
+          alert('The email address is already in use by another account.')
+          break;
+        case 'auth/user-not-found':
+          alert('No account with that email was found.')
+          break;
+        case 'auth/missing-email':
+          alert('Please enter your email.')
+          break;
+        default:
+          alert('Something went wrong.')
+      }
+    })
+}
 </script>
 
 <script>
@@ -42,6 +75,7 @@ export default {
       this.cookiesVisible = !this.cookiesVisible;
     },
   },
+  
 };
 </script>
 <template>
@@ -89,9 +123,9 @@ export default {
           </h4>
         </div>
         <div class="our-story-registration-field">
-          <input type="text" placeholder="Email address" id="emailField" />
-          <button id="getStarted">
-            <RouterLink to="/login">Get Started ></RouterLink>
+          <input type="text" placeholder="Email address" id="emailField" v-model="email"/>
+          <button id="getStarted" @click="register">
+            Get Started
           </button>
         </div>
       </div>
@@ -239,9 +273,9 @@ export default {
               Ready to watch? Enter your email to create or restart your
               membership.
             </h4>
-            <input type="text" placeholder="Email address" id="emailField" />
+            <input type="text" placeholder="Email address" id="emailField" v-model="email"/>
             <button id="getStarted">
-              <RouterLink to="/login">Get Started ></RouterLink>
+              Get Started
             </button>
           </div>
         </div>
@@ -748,7 +782,7 @@ input:focus {
   }
 
   #getStarted {
-    font-size: 1rem;
+    font-size: 0.9rem;
     width: 130px;
     height: 40px;
     box-sizing: border-box;
@@ -793,6 +827,7 @@ input:focus {
 
   .our-story-faq {
     padding: 70px 45px;
+    text-align: center;
   }
 
   .faq,
@@ -983,7 +1018,6 @@ input:focus {
   .faq,
   .faq-answer {
     width: inherit;
-    font-size: 1.2rem;
   }
 
   /* Footer */
