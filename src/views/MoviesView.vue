@@ -362,7 +362,7 @@ export default {
 .slider-content {
     padding: 20px 60px;
     position: relative;
-    top: -150px;
+    top: -200px;
 }
 
 .slider-item {
