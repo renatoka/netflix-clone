@@ -9,11 +9,11 @@
       <div class="loginBox">
         <div class="loginBoxHeading">
           <h1 id="signInText">Sign In</h1>
-          <input type="email" class="inputBox" v-model="state.email" placeholder="Email or phone number" />
-          <span id="warning" v-if="v$.email.$error">Proper email format is required.</span>
-          <input type="password" class="inputBox" v-model="state.password" placeholder="Password" />
-          <span id="warning" v-if="v$.email.$error">Use at least six characters.</span>
-          <button id="loginBtn" @click="submitLogin">Sign In</button>
+          <input type="email" class="inputBox" v-model="email" placeholder="Email or phone number" />
+          <span id="warning" v-if="errMsg">{{errMsg}}</span>
+          <input type="password" class="inputBox" v-model="password" placeholder="Password" />
+          <span id="warning" v-if="errMsg">{{errMsg}}</span>
+          <button id="loginBtn" @click="signIn">Sign In</button>
         </div>
         <div class="loginBoxBelow">
           <div class="loginBoxLeft">
@@ -35,45 +35,42 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref } from "vue";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from 'vue-router';
+const email = ref("");
+const password = ref("");
+const errMsg = ref("");
+const router = useRouter();
 
-import useValidate from '@vuelidate/core';
-import { required, email, minLength } from '@vuelidate/validators';
-import { reactive, computed } from 'vue';
-
-export default {
-  data() {
-    return {
-
-    }
-  },
-  setup() {
-    const state = reactive({
-      email: '',
-      password: '',
-    });
-    const rules = computed(() => {
-      return {
-        email: { required, email },
-        password: { required, minLength: minLength(6) },
-      };
-    });
-    const v$ = useValidate(rules, state)
-    return {
-      state,
-      v$,
-    }
-  },
-  methods: {
-    submitLogin() {
-      this.v$.$validate()
-      if (!this.v$.$error) {
-        console.log(this.v$)
-        this.$router.push({ name: "browse" });
+const signIn = () => {
+  signInWithEmailAndPassword(getAuth(), email.value, password.value)
+    .then((data) => {
+      console.log('Successfully logged in.')
+      router.push('/browse')
+    })
+    .catch((error) => {
+      console.log(error)
+      switch (error.code) {
+        case 'auth/invalid-email':
+        errMsg.value = 'Invalid email. Please try again.'
+          brethis.errorMsgak;
+        case 'auth/email-already-in-use':
+        errMsg.value = 'The email address is already in use by another account.'
+          break;
+        case 'auth/user-not-found':
+        errMsg.value = 'No account with that email was found.'
+          break;
+        case 'auth/missing-email':
+        errMsg.value = 'Please enter your email.'
+          break;
+        default:
+        errMsg.value = 'Something went wrong.'
       }
-    }
-  }
+    })
 }
+
 </script>
 
 <style>
