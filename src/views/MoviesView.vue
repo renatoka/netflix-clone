@@ -3,15 +3,16 @@
         <div class="pinnedHeader">
             <div class="header">
                 <div class="mainHeader">
-                    <img src="../assets/images/logo-netflix.png" alt="" srcset="" class="logo" />
+                    <RouterLink to="/"><img src="../assets/images/logo-netflix.png" alt="Netflix Logo" id="logo" />
+                    </RouterLink>
                     <ul class="mainHeader-ul">
                         <li class="mainHeader-li">
-                            <a href="">Home</a>
-                            <a href="">TV Shows</a>
-                            <a href="">Movies</a>
-                            <a href="">New & Popular</a>
-                            <a href="">My List</a>
-                            <a href="">Browse by Languages</a>
+                            <a href="#">Home</a>
+                            <a href="#">TV Shows</a>
+                            <a href="#">Movies</a>
+                            <a href="#">New & Popular</a>
+                            <a href="#">My List</a>
+                            <a href="#">Browse by Languages</a>
                         </li>
                     </ul>
                 </div>
@@ -229,7 +230,6 @@ export default {
         /* Very beginner friendly way of displaying billboard images.
         Will update once I learn more and how to do so. */
         this.selectedImage = this.randomItem(this.images);
-        console.log(this.selectedImage)
         if (this.selectedImage == 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABccducOFW4mcVGDxH5SLzLekOwmgaHfaqvekXucEoU6r6AH4Kj0XtbVgxqQcmqiHvqkhWPiHPP44P4N2WOOVmQhjWGvUFdQcl8aI.webp?r=853') {
             this.text = 'In a 1950s orphanage, a young girl reveals an astonishing talent for chess and begins an unlikely journey to stardom while grappling with addiction.',
                 this.coverImg = 'https://occ-0-1490-1489.1.nflxso.net/dnm/api/v6/LmEnxtiAuzezXBjYXPuDgfZ4zZQ/AAAABV5GmYeqjqlr49rSPZyok2MlnG7k-L1BLumk9b9tqWGZLp3qAIcve97viX_SRHMWGHXrAemVtpHq8JDXTfNtkf-wGrk-5teNvyMeKMoQgLUBv9U6kQou3IOgQaRgIdnr1YyXgIRpOwwNqfNCGoj7nBdcJtuJ6RbyDMcffvdt9pAgSD_Q9KAk1Q.webp?r=373'
@@ -247,7 +247,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 /* Styling goes from top item to bottom in that order */
 
 .header {
@@ -271,7 +271,6 @@ export default {
 .mainHeader-li a {
     font-weight: 400;
     font-size: 0.8vw;
-    font-family: "Poppins", sans-serif;
 }
 
 .mainHeader {
@@ -326,10 +325,10 @@ export default {
 }
 
 .play-button {
-    width: 5.5vw;
-    height: 4vh;
+    width: 120px;
+    height: 50px;
     border: 0;
-    font-size: 0.9vw;
+    font-size: 16px;
     background-color: white;
     border-radius: 5px;
     font-family: 'Poppins', sans-serif;
@@ -337,13 +336,12 @@ export default {
 }
 
 .more-info-button {
-    width: 7.5vw;
-    height: 4vh;
+    width: 150px;
+    height: 50px;
     border: 0;
-    font-size: 0.9vw;
+    font-size: 16px;
     background-color: rgba(109, 109, 110, 0.7);
     border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     color: white;
 }
@@ -378,24 +376,87 @@ export default {
     width: 15vw;
 }
 
-.slider-images .slider-image {
-    width: 1fr;
-}
-
 .slider-heading {
     font-size: 1.3vw;
     color: white;
-    font-family: 'Poppins', sans-serif;
     font-weight: 600;
 }
 
+@media only screen and (min-width: 886px) and (max-width:1300px) {
+    .info-wrapper {
+        top: 20%;
+    }
+
+    .slider-image {
+        width: 230px;
+    }
+
+    .slider-heading {
+        font-size: 18px;
+    }
+
+    .play-button, .more-info-button {
+        width: 120px;
+        height: 50px;
+    }
+}
+
 @media only screen and (min-width: 350px) and (max-width: 885px) {
+
+    svg {
+        width: 14px;
+        height: auto;
+    }
+
+    #logo {
+        width: 46px;
+        height: auto;
+    }
+
+    .header {
+        padding: 20px;
+    }
+    .search-icon {
+        display: none;
+    }
+
     .mainHeader-ul {
-        padding-left: 20px;
+        padding-left: 10px;
+    }
+
+    .mainHeader-li a {
+        font-weight: 400;
+        font-size: 0.5rem;
     }
 
     .mainHeader-li>a:not(:first-child) {
         display: none;
+    }
+
+    .info-wrapper {
+        position: absolute;
+        top: 20%;
+        left: 20px;
+    }
+
+    .play-button,
+    .more-info-button {
+        height: 30px;
+        font-size: 8px;
+    }
+
+    .slider-content {
+        padding: 0 20px;
+        position: relative;
+        top: -50px;
+    }
+
+    .slider-image {
+        width: 180px;
+    }
+
+    .slider-heading {
+        font-size: 15px;
     }
 }
 </style>

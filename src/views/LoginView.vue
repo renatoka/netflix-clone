@@ -46,8 +46,7 @@ const router = useRouter();
 
 const signIn = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
-    .then((data) => {
-      console.log('Successfully logged in.')
+    .then(() => {
       router.push('/browse')
     })
     .catch((error) => {
@@ -55,7 +54,7 @@ const signIn = () => {
       switch (error.code) {
         case 'auth/invalid-email':
           errMsg.value = 'Invalid email. Please try again.'
-          brethis.errorMsgak;
+          break;
         case 'auth/email-already-in-use':
           errMsg.value = 'The email address is already in use by another account.'
           break;
@@ -72,7 +71,7 @@ const signIn = () => {
 }
 </script>
 
-<style>
+<style scoped>
 .login {
   position: relative;
   min-height: 100vh;
@@ -159,18 +158,15 @@ const signIn = () => {
     background: none;
     background-color: black;
   }
-
   .header {
     margin: 0;
     padding: 15px;
   }
-
   .loginBox {
     width: 100%;
     height: 100%;
     padding: 20px;
   }
-
   .loginBoxBelow {
     display: flex;
     justify-content: space-between;

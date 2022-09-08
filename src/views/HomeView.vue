@@ -127,7 +127,7 @@ export default {
         </div>
         <div class="our-story-registration-field">
           <input type="text" placeholder="Email address" id="emailField" v-model="email" />
-          <button id="getStarted" @click="register">Get Started</button>
+          <button id="getStarted" @click="register">Get Started ></button>
         </div>
       </div>
     </div>
@@ -275,7 +275,7 @@ export default {
               membership.
             </h4>
             <input type="text" placeholder="Email address" id="emailField" v-model="email" />
-            <button id="getStarted">Get Started</button>
+            <button id="getStarted">Get Started ></button>
           </div>
         </div>
       </div>
@@ -549,7 +549,6 @@ input:focus {
   font-size: 0.875rem;
   width: 90px;
   height: 35px;
-
 }
 
 #signIn-btn {
@@ -564,7 +563,7 @@ input:focus {
 
 #our-story-title,
 #our-story-title-second {
-  font-weight: bold;
+  font-weight: 500;
   font-size: 4rem;
   position: relative;
   text-align: center;
@@ -596,7 +595,7 @@ input:focus {
 #emailField {
   border: 0;
   width: 480px;
-  height: 75px;
+  height: 65px;
   position: relative;
   top: -4px;
 }
@@ -604,7 +603,7 @@ input:focus {
 #getStarted {
   border: 0;
   width: 200px;
-  height: 75px;
+  height: 65px;
   color: white;
   font-size: 16px;
   background-color: red;
@@ -618,13 +617,13 @@ input:focus {
   font-size: 3.125rem;
   line-height: 1.1;
   margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 #our-story-icon-subheading {
   color: white;
   font-size: 1.625rem;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 #eleven {
@@ -635,9 +634,8 @@ input:focus {
 #our-story-faq-title {
   color: white;
   font-size: 3.125rem;
-  line-height: 1.1;
   margin: 1rem 0 1rem 0;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 #footer-text {
@@ -678,7 +676,6 @@ input:focus {
   #our-story-title,
   #our-story-title-second {
     font-size: 40px;
-    font-weight: bold;
   }
 
   #our-story-subtitle {
