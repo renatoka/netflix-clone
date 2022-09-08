@@ -207,7 +207,7 @@ export default {
         </div>
         <div class="our-story-faq-content">
           <button class="faq" @click="showFaqInfoOne">What is Netflix?</button>
-          <div class="faq-answer" v-if="this.faqVisible.one">
+          <div class="faq-answer" v-if="faqVisible.one">
             Netflix is a streaming service that offers a wide variety of
             award-winning TV shows, movies, anime, documentaries, and more on
             thousands of internet-connected devices.
