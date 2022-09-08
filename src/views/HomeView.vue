@@ -221,7 +221,7 @@ export default {
           <button class="faq" @click="showFaqInfoTwo">
             How much does Netflix cost?
           </button>
-          <div class="faq-answer" v-if="this.faqVisible.two">
+          <div class="faq-answer" v-if="faqVisible.two">
             Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
             streaming device, all for one fixed monthly fee. Plans range from
             EUR7.99 to EUR11.99 a month. No extra costs, no contracts.
@@ -229,7 +229,7 @@ export default {
           <button class="faq" @click="showFaqInfoThree">
             Where can I watch?
           </button>
-          <div class="faq-answer" v-if="this.faqVisible.three">
+          <div class="faq-answer" v-if="faqVisible.three">
             Watch anywhere, anytime. Sign in with your Netflix account to watch
             instantly on the web at netflix.com from your personal computer or
             on any internet-connected device that offers the Netflix app,
@@ -242,7 +242,7 @@ export default {
             without an internet connection. Take Netflix with you anywhere.
           </div>
           <button class="faq" @click="showFaqInfoFour">How do I cancel?</button>
-          <div class="faq-answer" v-if="this.faqVisible.four">
+          <div class="faq-answer" v-if="faqVisible.four">
             Netflix is flexible. There are no pesky contracts and no
             commitments. You can easily cancel your account online in two
             clicks. There are no cancellation fees – start or stop your account
@@ -251,7 +251,7 @@ export default {
           <button class="faq" @click="showFaqInfoFive">
             What can I watch on Netflix?
           </button>
-          <div class="faq-answer" v-if="this.faqVisible.five">
+          <div class="faq-answer" v-if="faqVisible.five">
             Netflix has an extensive library of feature films, documentaries, TV
             shows, anime, award-winning Netflix originals, and more. Watch as
             much as you want, anytime you want.
@@ -259,7 +259,7 @@ export default {
           <button class="faq" @click="showFaqInfoSix">
             Is Netflix good for kids?
           </button>
-          <div class="faq-answer" v-if="this.faqVisible.six">
+          <div class="faq-answer" v-if="faqVisible.six">
             The Netflix Kids experience is included in your membership to give
             parents control while kids enjoy family-friendly TV shows and movies
             in their own space.
