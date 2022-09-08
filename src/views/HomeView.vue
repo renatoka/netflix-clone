@@ -53,7 +53,7 @@ export default {
     };
   },
   methods: {
-    /* OVO OBAVEZNO POPRAVITI U JEDNU FUNKCIJU KAD NAUCIM KAKO */
+    /* Don't look at this mess. I'll make it into one function I swear. */
     showFaqInfoOne() {
       this.faqVisible.one = !this.faqVisible.one;
     },
