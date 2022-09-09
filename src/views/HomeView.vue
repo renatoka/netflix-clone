@@ -558,7 +558,7 @@ input:focus {
   color: white;
   border-radius: 3px;
   border-color: transparent;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
 #our-story-title,
