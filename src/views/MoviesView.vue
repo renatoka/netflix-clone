@@ -96,60 +96,61 @@ export default {
                     id: 0,
                     title: 'Bingeworty Suspenseful TV Shows',
                     images: [
-                        'src/assets/images/movie-icons/bingeworthy/1.jpg',
-                        'src/assets/images/movie-icons/bingeworthy/2.webp',
-                        'src/assets/images/movie-icons/bingeworthy/3.jpg',
-                        'src/assets/images/movie-icons/bingeworthy/4.jpg',
-                        'src/assets/images/movie-icons/bingeworthy/5.jpg',
-                        'src/assets/images/movie-icons/bingeworthy/7.jpg'
+                        'https://i.ibb.co/9rj2XwB/1.jpg',
+                        'https://i.ibb.co/gW959W1/2.webp',
+                        'https://i.ibb.co/vZq6W0x/3.jpg',
+                        'https://i.ibb.co/m8wHBPZ/4.jpg',
+                        'https://i.ibb.co/fH6y59x/5.jpg',
+                        'https://i.ibb.co/5LLTpp1/7.jpg'
                     ]
                 },
                 {
                     id: 1,
                     title: 'Documentaries',
                     images: [
-                        'src/assets/images/movie-icons/docu/1.jpg',
-                        'src/assets/images/movie-icons/docu/2.jpg',
-                        'src/assets/images/movie-icons/docu/3.jpg',
-                        'src/assets/images/movie-icons/docu/4.jpg',
-                        'src/assets/images/movie-icons/docu/5.jpg',
-                        'src/assets/images/movie-icons/docu/6.jpg',
+                        'https://i.ibb.co/25MTdZp/1.jpg',
+                        'https://i.ibb.co/Tt07fk0/2.jpg',
+                        'https://i.ibb.co/XzzPCn4/3.jpg',
+                        'https://i.ibb.co/0DFgrgR/4.jpg',
+                        'https://i.ibb.co/h7sG20b/5.jpg',
+                        'https://i.ibb.co/Dt72BK5/6.jpg',
                     ]
                 },
                 {
                     id: 2,
                     title: 'Trending Now',
                     images: [
-                        'src/assets/images/movie-icons/trending/1.jpg',
-                        'src/assets/images/movie-icons/trending/2.jpg',
-                        'src/assets/images/movie-icons/trending/3.jpg',
-                        'src/assets/images/movie-icons/trending/4.jpg',
-                        'src/assets/images/movie-icons/trending/5.jpg',
-                        'src/assets/images/movie-icons/trending/6.jpg',
+                        'https://i.ibb.co/LYGVK1k/1.jpg',
+                        'https://i.ibb.co/6ZNbjfK/2.jpg',
+                        'https://i.ibb.co/r293VVN/3.jpg',
+                        'https://i.ibb.co/gTc09L0/4.jpg',
+                        'https://i.ibb.co/7gKrxwP/5.jpg',
+                        'https://i.ibb.co/6vyhGRr/6.jpg',
                     ]
                 },
                 {
                     id: 3,
                     title: 'Award-Winning TV Shows',
                     images: [
-                        'src/assets/images/movie-icons/award-winning/1.jpg',
-                        'src/assets/images/movie-icons/award-winning/2.jpg',
-                        'src/assets/images/movie-icons/award-winning/3.jpg',
-                        'src/assets/images/movie-icons/award-winning/4.jpg',
-                        'src/assets/images/movie-icons/award-winning/5.jpg',
-                        'src/assets/images/movie-icons/award-winning/6.jpg',
+                        'https://i.ibb.co/L0kSRbb/1.jpg',
+                        'https://i.ibb.co/C5KqZqy/2.jpg',
+                        'https://i.ibb.co/K9BDJ6N/3.jpg',
+                        'https://i.ibb.co/1LZsf5x/4.jpg',
+                        'https://i.ibb.co/jJYX9v5/5.jpg',
+                        'https://i.ibb.co/j8fY5Mt/6.jpg',
                     ]
                 },
                 {
                     id: 4,
                     title: 'Popular on Netflix',
                     images: [
-                        'src/assets/images/movie-icons/popular/1.jpg',
-                        'src/assets/images/movie-icons/popular/2.jpg',
-                        'src/assets/images/movie-icons/popular/3.jpg',
-                        'src/assets/images/movie-icons/popular/4.jpg',
-                        'src/assets/images/movie-icons/popular/5.jpg',
-                        'src/assets/images/movie-icons/popular/6.jpg',
+                        'https://i.ibb.co/cDy005p/1.jpg',
+                        'https://i.ibb.co/DW7NxVn/2.jpg',
+                        'https://i.ibb.co/bB402tk/3.jpg',
+                        'https://i.ibb.co/7N6Xhbb/4.jpg',
+                        'https://i.ibb.co/Xzv8J3f/5.jpg',
+                        'https://i.ibb.co/JdxPJ9r/6.jpg',
+
                     ]
                 }
             ]
